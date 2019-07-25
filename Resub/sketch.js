@@ -1,45 +1,47 @@
 //https://github.com/jdorfman/awesome-json-datasets- where got the JSON data from
 
 var data;// creating a variable which can be read and linked back to by the code
-var pokemon;
-var pokemon2;
-var pokemon3;
-var pokemon4;
-var pokemon5;
-var pokemon6;
+var pokemon; var pokemon2; var pokemon3; var pokemon4; var pokemon5; var pokemon6;
 var img; var img2; var img3; var img4; var img5; var img6;
 var value;
 var button;
-var song;
-//var img = [];
-
 
 function preload() {
-data = loadJSON("pokedex.json");
-// preloading the JSON file so that it can be read and loaded into the code
-//song = loadSound ("Pokemon.mp3");
+data = loadJSON("pokedex.json");// preloading the JSON file so that it can be read and loaded into the code
 }
 
 function setup(){
   createCanvas(1200,800);// creating a canvas to display the code
   textFont('Digital-7');// creating the font which all text will be displayed on
   bg = loadImage('assets/images/pokeball_background.jpg'); // this is to enable the background to have an image loaded onto it
-  img = loadImage('assets/images/id1.png');//song = loadSound ("Pokemon.mp3");
+  img = loadImage('assets/images/id1.png');
   img2 = loadImage('assets/images/id2.png');
   img3 = loadImage('assets/images/id3.png');
   //img4 = loadImage('assets/images/id4.png');
   //img5 = loadImage('assets/images/id4.png');
   //img6 = loadImage('assets/images/id5.png');
+  //first button
   button = createButton('1');
   button.position(30, 20);
   button.size(100,30);
+  button.mousePressed(Show4);
   textAlign(CENTER);
   textSize(50);
+
+  function Show4() {
+  text(pokemon4,175,437);
+  image(img4,10,10,10,10);
+}
+
+
+  //second button
   button = createButton('2');
   button.position(150, 20);
   button.size(100,30);
   textAlign(CENTER);
   textSize(50);
+
+  //third button
   button = createButton('3');
   button.position(270, 20);
   button.size(100,30);
@@ -47,18 +49,10 @@ function setup(){
   textSize(50);
 }
 
-/*function imageClass(){
-  img[1] = loadImage("assets/images/id1.png");
-  img[2] = loadImage("assets/images/id2.png");
-  img[3] = loadImage("assets/images/id3.png");
-  img[4] = loadImage("assets/images/id4.png");
-  img[5] = loadImage("assets/images/id5.png");
-  img[6] = loadImage("assets/images/id6.png");
-}*/
-
-//function mousePressed() {
-//song.play();
-//}
+/*function keyPressed() {
+if (key == "80")
+song.play();
+//}*/
 
 function draw(){
 background(bg); // stating that the background is the image loaded in the setup
@@ -75,8 +69,6 @@ ellipse(172,555,8,8);
 fill(235,21,35);
 fill(255,255,255);
 arc(175, 565, 295, 295, 0, 59.7); // drawing an arc shape
-
-
 
 // second pokeball
 fill(235,21,35)
@@ -108,20 +100,20 @@ fill(235,21,35);
 fill(255,255,255);
 arc(600, 630, 295, 295, 0, 59.7);
 
-//fourth pokeball
+//fourth pokeball(bulba)
 fill(235,21,35);
 ellipse(200, 210, 300, 300);
 fill(0,0,0);
-rect(50,210,300,20);
+rect(50,220,300,20);
 fill(355,255,255);
-ellipse(200,220.5,20,20);
+ellipse(200,230,20,20);
 fill(0,0,0);
-ellipse(200,220,9,9);
+ellipse(200,229,9,9);
 fill(255,255,255);
-ellipse(200,220,8,8);
+ellipse(200,229,8,8);
 fill(235,21,35);
 fill(255,255,255);
-arc(201, 229, 295, 295, 0, 59.7);
+arc(201, 239, 295, 295, 0, 59.7);
 
 //fifth pokeball
 fill(235,21,35);
@@ -171,13 +163,4 @@ pokemon5 = data.pokemon[4].name;
 //text(pokemon5,600,506);
 pokemon6 = data.pokemon[5].name;
 //text(pokemon6,980,452);
-
-//images = data.pokemon.img[0];
-//buttonPressed(pokemon4);
-//alert(JSON.stringify(name));
-}
-
-  function mouseClicked() {
-  if (value == pokemon)
-  image(img1,50,150);
 }
