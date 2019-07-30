@@ -7,7 +7,6 @@ var button;
 var img; var img2; var img3; var img4; var img5; var img6;
 var pokemon; var pokemon2; var pokemon3; var pokemon4; var pokemon5; var pokemon6;
 
-
 function preload() {
 data = loadJSON("pokedex.json");// preloading the JSON file so that it can be read and loaded into the code
 }
@@ -69,7 +68,7 @@ function setup(){
   button.size(100,30);
   button.mousePressed(display6);
   textAlign(CENTER);
-  //textSize(50);
+  textSize(50);
 }
 
 function draw(){ // function which draws onto the canvas
