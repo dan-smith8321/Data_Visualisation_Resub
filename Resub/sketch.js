@@ -2,10 +2,11 @@
 
 // creating variables below in order to store a data type
 var data;
-var pokemon; var pokemon2; var pokemon3; var pokemon4; var pokemon5; var pokemon6;
-var img; var img2; var img3; var img4; var img5; var img6;
-var value;
+var bg;
 var button;
+var img; var img2; var img3; var img4; var img5; var img6;
+var pokemon; var pokemon2; var pokemon3; var pokemon4; var pokemon5; var pokemon6;
+
 
 function preload() {
 data = loadJSON("pokedex.json");// preloading the JSON file so that it can be read and loaded into the code
@@ -13,8 +14,8 @@ data = loadJSON("pokedex.json");// preloading the JSON file so that it can be re
 
 function setup(){
   createCanvas(1200,800);// creating a canvas to display the code
-  textFont('Digital-7');// creating the font which all text will be displayed on
-  bg = loadImage('assets/images/pokeball_background.jpg'); // creating a variable to enable the background to have an image loaded onto it(sourced https://p5js.org)
+  textFont('Digital-7');// creating the font which all text will be displayed as
+  bg = loadImage('assets/images/pokeball_background.jpg'); // creating a variable to enable the background to have an image loaded onto it(sourced https://p5js.org/examples/dom-input-and-button.html)
   img = loadImage('assets/images/id1.png'); // creating a variable which loads each seperate image
   img2 = loadImage('assets/images/id2.png');
   img3 = loadImage('assets/images/id3.png');
@@ -68,13 +69,8 @@ function setup(){
   button.size(100,30);
   button.mousePressed(display6);
   textAlign(CENTER);
-  textSize(50);
+  //textSize(50);
 }
-
-/*function keyPressed() {
-if (key == "80")
-song.play();
-//}*/
 
 function draw(){ // function which draws onto the canvas
 background(bg); // stating that the background is the image loaded in the setup(sourced https://p5js.org/examples/dom-input-and-button.html)
@@ -168,14 +164,14 @@ fill(235,21,35);
 fill(255,255,255);
 arc(980.5, 580.75, 295, 295, 0, 59.7);
 //end of sixth
-fill(255,255,255) // chooses the colour of the text
 textSize(50); // adjusting the text size
 }
 
 function display1() { // function for the button to enable text and images to load once pressed(sourced https://p5js.org/examples/dom-input-and-button.html to help)
   pokemon4 = data.pokemon[3].name; //I watched a video from The Coding Train in order to help give a idea of how to pull data from JSON.(https://www.youtube.com/watch?v=_NFkzw6oFtQ&t=485s)
-  text(pokemon4,175,500);
-  image(img4, 100,565,150,150);
+  text(pokemon4,175,500); // displaying the name data pulled from JSON on the canvas at a position I want it
+  image(img4, 100,565,150,150); // displaying the image pulled from my load image at a position I want it
+  fill(235,167,50); // changing the colour of the text on the text after pressing the Pokemon 1 buttons
 }
 //Charmander
 
@@ -197,6 +193,7 @@ function display4(){ // function for my fourth button to enable text and images 
   pokemon = data.pokemon[0].name;
   text(pokemon,200,165);
   image(img,100,230,200,150);
+  fill(23,193,28); // changing the colour of the text on the text after pressing the Pokemon 2 buttons
 }
 //Bulbasaur
 
@@ -215,9 +212,9 @@ function display6(){ // function for my sixth button to enable text and images t
 //Venusaur
 
 function mousePressed(){ // creating a function for when the mouse is pressed it creates no loop
-  noLoop();
+  noLoop(); // creating no loop
 }
 
 function mouseReleasd(){ //creating a function for when the mouse is released it restarts the loop again
-  loop();
+  loop(); // restarting the loop
 }
